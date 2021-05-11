@@ -1,35 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
+import { selectMovies } from '../features/movie/movieSlice'
+import { useSelector } from 'react-redux'
 
 function Movies() {
+  const movies = useSelector(selectMovies)
+
+  console.log(movies)
   return (
     <Container>
       <h4>Recommended for You</h4>
       <Content>
-        <Wrap>
-          <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/5BB1FBFA805ACA487CA62FFB3617BE172535636042E25D21D7E274F6E6F580B6/scale?width=1200&aspectRatio=1.78&format=jpeg" />
-        </Wrap>
-        <Wrap>
-          <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/0542B444AA85B0ACF8FD33B8D4FC29EE8B5C1E084863AC4D72AE50A4C57F1503/scale?width=1200&aspectRatio=1.78&format=jpeg" />
-        </Wrap>
-        <Wrap>
-          <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/C213A77347283CA7993BC5D842FA992358C4B39A7DD5D6B0A61447846E078419/scale?width=1200&aspectRatio=1.78&format=jpeg" />
-        </Wrap>
-        <Wrap>
-          <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/F112D11EB7CCD188FAB5A06F6352555E5B9AF87F330B4A9221EC6FB9B6991FF9/scale?width=1200&aspectRatio=1.78&format=jpeg" />
-        </Wrap>
-        <Wrap>
-          <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/5BB1FBFA805ACA487CA62FFB3617BE172535636042E25D21D7E274F6E6F580B6/scale?width=1200&aspectRatio=1.78&format=jpeg" />
-        </Wrap>
-        <Wrap>
-          <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/0542B444AA85B0ACF8FD33B8D4FC29EE8B5C1E084863AC4D72AE50A4C57F1503/scale?width=1200&aspectRatio=1.78&format=jpeg" />
-        </Wrap>
-        <Wrap>
-          <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/C213A77347283CA7993BC5D842FA992358C4B39A7DD5D6B0A61447846E078419/scale?width=1200&aspectRatio=1.78&format=jpeg" />
-        </Wrap>
-        <Wrap>
-          <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/F112D11EB7CCD188FAB5A06F6352555E5B9AF87F330B4A9221EC6FB9B6991FF9/scale?width=1200&aspectRatio=1.78&format=jpeg" />
-        </Wrap>
+        {movies && 
+          movies.map( (movie) => (
+            <Wrap key={movie.id}>
+              <img src={movie.cardImg} />
+            </Wrap>
+          ))
+        }
       </Content>
     </Container>
   )
@@ -38,7 +26,6 @@ function Movies() {
 export default Movies
 
 const Container = styled.div `
-
 `
 
 const Content = styled.div `
