@@ -9,6 +9,15 @@ const firebaseConfig = {
   appId: "1:37918794208:web:dbe9842dfe1dda522a4b85",
   measurementId: "G-DRVLJKWRWG",
 };
+// const firebaseConfig = {
+//   apiKey: "AIzaSyC8vGboy-C8KpLqXbd2-gMGGGY-D3tUqgg ",
+//   authDomain: "disney-plus-clone-3f3b4.firebaseapp.com",
+//   projectId: "disney-plus-clone-3f3b4",
+//   storageBucket: "disney-plus-clone-3f3b4.appspot.com",
+//   messagingSenderId: "37918794208",
+//   appId: "1:37918794208:web:dbe9842dfe1dda522a4b85",
+//   measurementId: "G-DRVLJKWRWG",
+// };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const db = firebaseApp.firestore();
